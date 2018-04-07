@@ -19,15 +19,15 @@ void setup() {
 void loop() {
   // スイッチが押されていない状態から押されている状態に変化した時
   if(sw1 == false && digitalRead(2) == HIGH){
+    // チャタリング対応
     delay(10);
-	// チャタリング対応
     if(digitalRead(2) == HIGH){
-	  // ゲーム開始の通知
+	    // ゲーム開始の通知
       Serial.write("s");
-      delay(50);				// Windows対応用(Macでは多分いらない)
-      Serial.write("n");		// Windows対応用(Macでは多分いらない)
+      delay(50);            // Windows対応用(Macでは多分いらない)
+      Serial.write("n");    // Windows対応用(Macでは多分いらない)
 
-	  // スイッチ状態ON
+	    // スイッチ状態ON
       sw1 = true;
     }
   // スイッチがもともと押されている状態だった時
@@ -36,7 +36,7 @@ void loop() {
 	  // 継続してスイッチが押されていても何もしない
     }else{
 	  // スイッチが押されていなかったらスイッチ状態OFFに変更
-      sw1 = false;
+    sw1 = false;
     }
   }
 
@@ -44,7 +44,7 @@ void loop() {
   if(sw2 == false && digitalRead(12) == HIGH){
     delay(10);
     if(digitalRead(12) == HIGH){
-	  // 弾発射の通知
+	    // 弾発射の通知
       Serial.write("h");
       delay(50);
       Serial.write("n");
@@ -60,7 +60,7 @@ void loop() {
   if(sw3 == false && digitalRead(9) == HIGH){
     delay(10);
     if(digitalRead(9) == HIGH){
-	  // 得点ゲットの通知
+	    // 得点ゲットの通知
       Serial.write("p");
       delay(50);
       Serial.write("n");
