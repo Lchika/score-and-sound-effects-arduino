@@ -1,1 +1,1 @@
-# score-and-sound-effects-demo-arduino
+# score-and-sound-effects-arduino
